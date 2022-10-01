@@ -1,8 +1,14 @@
 {% extends "layout.html" %}
 
+{% block title %}
+Home
+{% endblock %}
 {% block main %}
-      <form action="/predict", method="get">
-         <input name="movie" type="text" autofocus placeholder="Enter Movie Name">
-         <input type="submit" value="Recommend!">
-      </form>
+      
+   <div class="mt-5 p-5 text-white rounded" >
+         <form action="/predict", method="get">
+            <input name="movie" type="text" autofocus placeholder="Enter Movie Name">
+            <input type="submit" value="Recommend!">
+         </form>
+   </div>
 {% endblock %}
