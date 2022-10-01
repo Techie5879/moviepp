@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      {% block main %}
+         {% for record in predictions %}
+            {{record}}
+            <br>
+         {% endfor %}
+      {% endblock %}
+      
+      
+   </body>
+</html>
