@@ -2,7 +2,7 @@
 
 {% block main %}
       <form action="/predict", method="get">
-         <input name="movie" type="text">
+         <input name="movie" type="text" autofocus placeholder="Enter Movie Name">
          <input type="submit" value="Recommend!">
       </form>
 {% endblock %}
