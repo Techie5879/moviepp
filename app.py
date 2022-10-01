@@ -13,11 +13,12 @@ def index():
 
 @app.route('/predict')
 def predict():
-    predictions = get_recs(request.args.get("movie"))
+    movie_name = request.args.get("movie")
+    predictions = get_recs(movie_name)
     if isinstance(predictions, str):
         return render_template("apology.html")
     else: 
-        return render_template("prediction.html", predictions=predictions)
+        return render_template("prediction.html", predictions=predictions, already_liked=movie_name)
 
 @app.route('/about')
 def about():

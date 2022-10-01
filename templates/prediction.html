@@ -6,6 +6,8 @@ Predictions
 
 {% block main %}
 <div class="mt-5 p-5 text-black rounded" >
+   <b>Users who liked {{already_liked}} also liked: </b>
+   <br><br>
    {% for record in predictions %}
       {{record}}
       <br>
