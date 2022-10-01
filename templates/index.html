@@ -4,11 +4,17 @@
 Home
 {% endblock %}
 {% block main %}
-      
-   <div class="mt-5 p-5 text-white rounded" >
-         <form action="/predict", method="get">
-            <input name="movie" type="text" autofocus placeholder="Enter Movie Name">
-            <input type="submit" value="Recommend!">
+<div class="mt-5 p-5 d-flex align-items-center justify-content-center" >
+      <form action="/predict", method="get">
+            <div class="mb-3">
+            
+            <div class="input-group mb-3">
+                  <input type="text" class="form-control" name="movie" placeholder="Movie Name" autofocus>
+                  <div class="input-group-append">
+                        <button type="submit" class="btn btn-custom btn-lg">Recommend!</button>
+                  </div>
+            </div>
+         
          </form>
-   </div>
+</div>
 {% endblock %}
