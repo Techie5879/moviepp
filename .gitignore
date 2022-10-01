@@ -3,3 +3,4 @@ ratings.csv
 svd_model_final.sav
 svd_model.h5
 svd_model_200.h5
+__pycache__
