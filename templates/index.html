@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-   <body>
+{% extends "layout.html" %}
+
+{% block main %}
       <form action="/predict", method="get">
          <input name="movie" type="text">
          <input type="submit" value="Recommend!">
       </form>
-      
-   </body>
-</html>
+{% endblock %}
