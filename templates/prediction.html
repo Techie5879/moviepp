@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
-   <body>
-      {% block main %}
-         {% for record in predictions %}
-            {{record}}
-            <br>
-         {% endfor %}
-      {% endblock %}
-      
-      
-   </body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+Predictions
+{% endblock %}
+
+{% block main %}
+<div class="mt-5 p-5 text-black rounded" >
+   {% for record in predictions %}
+      {{record}}
+      <br>
+   {% endfor %}
+</div>
+{% endblock %}
