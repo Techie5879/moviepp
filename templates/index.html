@@ -5,16 +5,9 @@ Home
 {% endblock %}
 {% block main %}
 <div class="mt-5 p-5 d-flex align-items-center justify-content-center" >
-      <form action="/predict", method="get">
-            <div class="mb-3">
-            
-            <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="movie" placeholder="Movie Name" autofocus>
-                  <div class="input-group-append">
-                        <button type="submit" class="btn btn-custom btn-lg">Recommend!</button>
-                  </div>
-            </div>
-         
-         </form>
+      <form action="/predict", method="get" class="d-flex">
+            <input class="form-control me-2" placeholder="Movie Name" name="movie">
+            <button class="btn btn-outline-success" type="submit">Recommend!</button>
+      </form>
 </div>
 {% endblock %}
