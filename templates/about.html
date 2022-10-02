@@ -3,9 +3,21 @@
 {% block title %}
 About Us
 {% endblock %}
+
+
+{% block navstyle %}
+
+<li class="nav-item">
+      <a class="nav-link" aria-current="page" href="/">Home</a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link active" href="/about">About</a>
+   </li>
+{% endblock %}
+
 {% block main %}
       
-<div class="mt-5 p-5 text-black rounded" >
+<div class="mt-5 p-5 text-black rounded d-flex justify-content-center" >
     TODO
 </div>
 {% endblock %}

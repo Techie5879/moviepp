@@ -3,6 +3,17 @@
 {% block title %}
 Home
 {% endblock %}
+
+{% block navstyle %}
+
+<li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/">Home</a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link" href="/about">About</a>
+   </li>
+{% endblock %}
+
 {% block main %}
 <div class="container-fluid my-5 row d-flex align-content-center" style="height: 500px;">
       <form action="/predict", method="get" class="d-flex justify-content-center">
