@@ -26,11 +26,10 @@ const Predict = () => {
           return response.json();
         }
       }).then((data)=>{
-        console.log(data);
+        // console.log(data);
         
-        console.log(org_title)
-        setMovies(Object.values(data).slice(0, 5));
-        setOrg_title(data["org"])
+        setMovies(Object.values(data).slice(1, 6));
+        setOrg_title(Object.values(data).slice(0, 1));
       })
     } 
     
@@ -39,7 +38,7 @@ const Predict = () => {
     }
 
     
-  }, [wasFetched, navigate, org_title]);
+  }, [wasFetched, navigate]);
 
   // useEffect(() => {
   //   if (wasFetched) {
@@ -53,12 +52,12 @@ const Predict = () => {
 
     
     
-  const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}</p>);
+  const movie_name = movies.map((movie) => <p key={movie.toString()}>tt{movie}</p>);
 
   return (
     <div>
         <Navbar />
-        <h1>Users who liked {org_title} also liked:</h1>
+        <h1>Users who liked tt{org_title} also liked:</h1>
         <br />
         <h2><Movies movie={movie_name}/></h2>
     </div>
