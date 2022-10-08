@@ -24,7 +24,7 @@ def movies():
 
 
 
-@app.route('/predict', methods=["POST", "GET"])
+@app.route('/predictor', methods=["POST", "GET"])
 def predict():
 
     if request.method == "POST":
@@ -58,8 +58,11 @@ def predict():
             url = "https://api.themoviedb.org/3/find/tt{}?api_key=3748a98a294946f41071ee122061dc9b&language=en-US&external_source=imdb_id".format(imdbId)
             response = urllib.request.urlopen(url)
             data = response.read()
-            imdb_result[i] = json.loads(data)
-        print(imdb_result)
+            intermediate = json.loads(data)
+            intermediate["imdbId"] = imdbId
+            final = json.dumps(intermediate)
+            # print(intermediate)
+            imdb_result[i] = json.loads(final)
         return imdb_result
 
 
