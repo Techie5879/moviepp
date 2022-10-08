@@ -1,29 +1,53 @@
-from pyexpat import model
-from flask import Flask, request, render_template
+from flask import Flask, request
 from predict import get_recs
-
+import json
 
 app = Flask(__name__)
+
+obj = {}
 
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return "Hello World"
+
+@app.route('/movies')
+def movies():
+    with open("movies_obj.json") as file:
+        movies_obj = json.load(file)
+    
+    movies = movies_obj["title"]
+    return movies
 
 
-@app.route('/predict')
+
+@app.route('/predict', methods=["POST", "GET"])
 def predict():
-    movie_name = request.args.get("movie")
-    predictions = get_recs(movie_name)
-    if isinstance(predictions, str):
-        return render_template("apology.html")
-    else: 
-        return render_template("prediction.html", predictions=predictions, already_liked=movie_name)
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
+    if request.method == "POST":
+        
+        movie = request.get_json()
+        movie_title = movie["title"]
+        # If movie title isnt empty
+        if movie_title:
+            predictions = get_recs(movie_title)
+            # If movie title in csv list
+            if predictions:
+                obj["org"] = movie_title
+                final = json.loads(predictions)
+                rec_titles = final["Movie Title"]
+                obj.update(rec_titles)
+                print(obj)
+            # If movie title isnt in csv list
+            else: 
+                obj.clear()
+            
+    if obj == {}:
+        return None
+    else:
+        return obj
 
-if __name__ == "__main__":
-    app.run(debug=True)
 
+
+# if __name__ == "__main__":
+#     app.run(debug=True)

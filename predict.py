@@ -2,7 +2,11 @@ from scipy.spatial.distance import cosine as cosine_distance
 import pickle, gzip, pickletools
 import numpy as np
 import pandas as pd
+import json
+
+
 movies = pd.read_csv("movies.csv")
+
 
 filepath = "svd_model_200.h5"
 with gzip.open(filepath, 'rb') as f:
@@ -37,8 +41,8 @@ def get_recs(liked_movie_title: str, model=model):
                 similarity_table.append((similarity_score, recommended_movies))
         recs = pd.DataFrame(sorted(similarity_table), columns=["vector cosine distance", "Movie Title"])
         # sort movies by ascending similarity
-        recs = list(recs.head(30).to_dict()["Movie Title"].values())
+        recs = recs.head(5).to_json()
         return recs
     # Exception for if there isnt enough info about the movie
     except:
-        return "Not enough info about movie"
+        return None
