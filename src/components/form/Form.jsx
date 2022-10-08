@@ -24,7 +24,7 @@ const Form = () => {
 
     console.log(movie_submit);
 
-    fetch('/predict', {
+    fetch('/predictor', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(movie_submit)
