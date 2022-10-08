@@ -8,8 +8,9 @@ import './predict.css'
 const Predict = () => {
   const [org_title, setOrg_title] = useState("");
   const [movies, setMovies] = useState([]);
-  const [overview, setOverview] = useState([]);
-  
+  const [overview, setOverview] = useState("");
+  const [org_poster, setOrg_poster] = useState("");
+  const [org_imdb, setOrg_imdb] = useState("");
 
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const Predict = () => {
 
   useEffect(() => {
     if (wasFetched) {
-      fetch('/predict').then((response) => {
+      fetch('/predictor').then((response) => {
         if (response.status !== 200) {
           navigate("/apology");
           setMovies([]);
@@ -29,10 +30,10 @@ const Predict = () => {
           return response.json();
         }
       }).then((data)=>{
-        // console.log(Object.values(data[0])[0][0]["title"]);
-        setOrg_title(Object.values(data[0])[0][0]["title"]);
-
-
+        setOrg_title(Object.values(data[0])[1][0]["title"]);
+        setOrg_imdb(Object.values(data)[0]["imdbId"])
+        
+        setOrg_poster(Object.values(data[0])[1][0]["poster_path"])
 
         const imdb_result_array = Object.values(data).slice(1, 6);
         console.log(imdb_result_array);
@@ -46,12 +47,8 @@ const Predict = () => {
         setMovies(movies_results);
 
 
-        function get_overview_results(movie_obj) {
-          return movie_obj["movie_results"][0]["overview"];
-        }
 
-        const overview_results = imdb_result_array.map(get_overview_results)
-        setOverview(overview_results)
+        setOverview(Object.values(data[0])[1][0]["overview"])
         
       })
     } 
@@ -65,14 +62,16 @@ const Predict = () => {
   
 
   const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
-  const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
+  // const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
 
   return (
     <div>
         <Navbar />
         <h1>Users who liked {org_title} also liked:</h1>
+        {/* <h2>{org_poster}</h2> */}
+        <a href={`https://www.imdb.com/title/tt${org_imdb}/`}><img src={`https://image.tmdb.org/t/p/w400${org_poster}`} alt="org_poster"/></a>
         <br />
-        <Movies movie={movie_name} overview={overview_each}/>
+        <Movies movie={movie_name} synopsis={overview}/>
     </div>
   )
 }
