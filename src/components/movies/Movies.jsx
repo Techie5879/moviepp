@@ -1,10 +1,14 @@
 import React from 'react'
 import './movies.css'
 
-const  Movies = ({movie}) => {
+const  Movies = ({movie, overview}) => {
     // console.log(movie);
     return (
-        <div>{movie}</div>
+        <>
+            <div>{movie}</div>
+            <br />
+            <div>{overview}</div>
+        </>
     )
 }
 
