@@ -72,7 +72,7 @@ const Predict = () => {
   }, [wasFetched, navigate]);
   
 
-  const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
+  // const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
   // const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
   
   return (
@@ -80,14 +80,14 @@ const Predict = () => {
         <Navbar />
         <h1>Users who liked {org_title} also liked:</h1>
         {/* <h2>{org_poster}</h2> */}
-        <a href={`https://www.imdb.com/title/tt${org_imdb}/`}><img src={`https://image.tmdb.org/t/p/w400${org_poster}`} alt="org_poster"/></a>
+        <a href={`https://www.imdb.com/title/tt${org_imdb}/`}><img src={`https://image.tmdb.org/t/p/w300${org_poster}`} alt="org_poster"/></a>
         <br />
-        <Movies movie={movie_name} synopsis={overview} />
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[0]}/`}><p>1st rec</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[1]}/`}><p>2nd rec</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[2]}/`}><p>3rd rec</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[3]}/`}><p>4th rec</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[4]}/`}><p>5th rec</p></a>
+        <Movies synopsis={overview} />
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[1]}/`}><h1>{movies[1]}</h1></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[2]}/`}><h1>{movies[2]}</h1></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[3]}/`}><h1>{movies[3]}</h1></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[0]}/`}><h1>{movies[0]}</h1></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[4]}/`}><h1>{movies[4]}</h1></a>
     </div>
   )
 }
