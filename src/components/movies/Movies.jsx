@@ -5,9 +5,9 @@ const  Movies = ({movie, synopsis}) => {
     // console.log(movie);
     return (
         <>
-            <div>{movie}</div>
-            
             <div><p>{synopsis}</p></div>
+            <div>{movie}</div>
+        
         </>
     )
 }

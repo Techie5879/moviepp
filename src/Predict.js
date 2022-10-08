@@ -11,6 +11,10 @@ const Predict = () => {
   const [overview, setOverview] = useState("");
   const [org_poster, setOrg_poster] = useState("");
   const [org_imdb, setOrg_imdb] = useState("");
+  const [imdb_ids, setImdb_ids] = useState([])
+
+
+
 
   const navigate = useNavigate();
 
@@ -36,7 +40,7 @@ const Predict = () => {
         setOrg_poster(Object.values(data[0])[1][0]["poster_path"])
 
         const imdb_result_array = Object.values(data).slice(1, 6);
-        console.log(imdb_result_array);
+        // console.log(imdb_result_array);
 
         
         function get_movie_results(movie_obj) {
@@ -47,6 +51,13 @@ const Predict = () => {
         setMovies(movies_results);
 
 
+        console.log(Object.values(data))
+        const movie_imdbs = imdb_result_array.map(get_movie_imdbs)
+
+        function get_movie_imdbs (movie_obj) {
+          return movie_obj["imdbId"]
+        }
+        setImdb_ids(movie_imdbs);
 
         setOverview(Object.values(data[0])[1][0]["overview"])
         
@@ -63,7 +74,7 @@ const Predict = () => {
 
   const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
   // const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
-
+  
   return (
     <div>
         <Navbar />
@@ -71,7 +82,12 @@ const Predict = () => {
         {/* <h2>{org_poster}</h2> */}
         <a href={`https://www.imdb.com/title/tt${org_imdb}/`}><img src={`https://image.tmdb.org/t/p/w400${org_poster}`} alt="org_poster"/></a>
         <br />
-        <Movies movie={movie_name} synopsis={overview}/>
+        <Movies movie={movie_name} synopsis={overview} />
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[0]}/`}><p>1st rec</p></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[1]}/`}><p>2nd rec</p></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[2]}/`}><p>3rd rec</p></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[3]}/`}><p>4th rec</p></a>
+        <a href= {`https://www.imdb.com/title/tt${imdb_ids[4]}/`}><p>5th rec</p></a>
     </div>
   )
 }
