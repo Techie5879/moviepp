@@ -1,0 +1,13 @@
+h1 {
+    font-family: var(--font-family);
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    font-family: var(--font-family);
+}
