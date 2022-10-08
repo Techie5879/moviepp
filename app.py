@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 obj = {}
 
-
 @app.route('/')
 def index():
     return "Hello World"
@@ -28,16 +27,19 @@ def predict():
         
         movie = request.get_json()
         movie_title = movie["title"]
+        # print(movie_title)
         # If movie title isnt empty
         if movie_title:
             predictions = get_recs(movie_title)
+            # print(predictions)
             # If movie title in csv list
             if predictions:
-                obj["org"] = movie_title
+                
                 final = json.loads(predictions)
-                rec_titles = final["Movie Title"]
+                rec_titles = final["imdbId"]
+                print(rec_titles)
                 obj.update(rec_titles)
-                print(obj)
+                # print(obj)
             # If movie title isnt in csv list
             else: 
                 obj.clear()
