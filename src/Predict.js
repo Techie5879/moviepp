@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 
 import {Navbar} from './components'
 import {OrgMovie} from './components'
+
 import './predict.css'
 
 const Predict = () => {
