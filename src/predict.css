@@ -14,7 +14,10 @@ h2 {
 
 .recs {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 0 2rem;
 }
 

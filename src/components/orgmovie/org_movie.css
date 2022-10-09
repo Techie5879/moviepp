@@ -1,13 +1,16 @@
 .original {
     display: flex;
+    /* flex-wrap: wrap; */
     padding: 1rem 2rem;
-    width: 90%;
+    /* width: 90%; */
+    border: 2px solid hotpink;
 }
 
 .original p {
     color: #fff;
     font-family: var(--font-family);
     padding: 2rem;
+    width: 90%;
 }
 
 .original_details h2 {
