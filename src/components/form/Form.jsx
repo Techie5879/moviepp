@@ -22,7 +22,7 @@ const Form = () => {
 
     setIsPending(true);
 
-    console.log(movie_submit);
+    // console.log(movie_submit);
 
     fetch('/predictor', {method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(movie_submit)
     }).then((response) => {
@@ -34,7 +34,7 @@ const Form = () => {
         return response.json();
       }
     }).then((data) => {
-      console.log(data);
+      // console.log(data);
       title ? (navigate('/predict', { state: { wasFetched: true, resp_data: data} })) : (navigate('/apology'));
       setIsPending(false);
     })

@@ -26,51 +26,51 @@ const Predict = () => {
 
   useEffect(() => {
     if (wasFetched && resp_data) {
-      console.log(resp_data);
-        setOrg_title(Object.values(resp_data[0])[1][0]["title"]);
-        setOrg_imdb(Object.values(resp_data)[0]["imdbId"])
-        
-        setOrg_poster(Object.values(resp_data[0])[1][0]["poster_path"])
-        
-        const imdb_result_array = Object.values(resp_data).slice(1, 16);
+      // console.log(resp_data);
+      setOrg_title(Object.values(resp_data[0])[1][0]["title"]);
+      setOrg_imdb(Object.values(resp_data)[0]["imdbId"])
+      
+      setOrg_poster(Object.values(resp_data[0])[1][0]["poster_path"])
+      
+      const imdb_result_array = Object.values(resp_data).slice(1, 16);
 
-        
-        
-        // Get movie titles from IMDb
-        function get_movie_results(movie_obj) {
-          return movie_obj["movie_results"][0]["title"];
+      
+      
+      // Get movie titles from IMDb
+      function get_movie_results(movie_obj) {
+        return movie_obj["movie_results"][0]["title"];
+      }
+      const movies_results = imdb_result_array.map(get_movie_results)
+      setMovies(movies_results);
+      // console.log(movies)
+      
+      
+      // Get IMDb Ids for the recommended movies
+      const movie_imdbs = imdb_result_array.map(get_movie_imdbs)
+      
+      function get_movie_imdbs (movie_obj) {
+        return movie_obj["imdbId"]
+      }
+      // console.log(movie_imdbs)
+      setImdb_ids(movie_imdbs);
+      
+      setOverview(Object.values(resp_data[0])[1][0]["overview"])
+
+      function get_recs_images (movie_obj) {
+        return movie_obj["movie_results"][0]["poster_path"]
+      }
+      const recs_images = imdb_result_array.map(get_recs_images)
+      setRecs_posters(recs_images)
+
+      // console.log(Object.values(resp_data[0])[1][0]["release_date"]);
+
+      // Date conversion from YYYY-MM-DD to DD-MM-YYYY
+      function convertDate(dateString){
+        var p = dateString.split(/\D/g)
+        return [p[2],p[1],p[0] ].join("-")
         }
-        const movies_results = imdb_result_array.map(get_movie_results)
-        setMovies(movies_results);
-        console.log(movies)
-        
-        
-        // Get IMDb Ids for the recommended movies
-        const movie_imdbs = imdb_result_array.map(get_movie_imdbs)
-        
-        function get_movie_imdbs (movie_obj) {
-          return movie_obj["imdbId"]
-        }
-        console.log(movie_imdbs)
-        setImdb_ids(movie_imdbs);
-        
-        setOverview(Object.values(resp_data[0])[1][0]["overview"])
-
-        function get_recs_images (movie_obj) {
-          return movie_obj["movie_results"][0]["poster_path"]
-        }
-        const recs_images = imdb_result_array.map(get_recs_images)
-        setRecs_posters(recs_images)
-
-        console.log(Object.values(resp_data[0])[1][0]["release_date"]);
-
-        // Date conversion from YYYY-MM-DD to DD-MM-YYYY
-        function convertDate(dateString){
-          var p = dateString.split(/\D/g)
-          return [p[2],p[1],p[0] ].join("-")
-          }
-           
-          setOrg_release(convertDate(Object.values(resp_data[0])[1][0]["release_date"]))
+          
+        setOrg_release(convertDate(Object.values(resp_data[0])[1][0]["release_date"]))
     
     } 
     
@@ -81,7 +81,7 @@ const Predict = () => {
     
   }, [wasFetched, navigate, resp_data]);
   
-  console.log(resp_data)
+  
   // const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
   // const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
   
