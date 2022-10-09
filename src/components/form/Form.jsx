@@ -24,12 +24,18 @@ const Form = () => {
 
     console.log(movie_submit);
 
-    fetch('/predictor', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(movie_submit)
-    }).then(() => {
-      title ? (navigate('/predict', { state: { wasFetched: true } })) : (navigate('/apology'));
+    fetch('/predictor', {method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(movie_submit)
+    }).then((response) => {
+      if (response.status !== 200) {
+        navigate("/apology");
+        // return {}
+      }
+      if (response.status === 200) {
+        return response.json();
+      }
+    }).then((data) => {
+      console.log(data);
+      title ? (navigate('/predict', { state: { wasFetched: true, resp_data: data} })) : (navigate('/apology'));
       setIsPending(false);
     })
 

@@ -21,28 +21,19 @@ const Predict = () => {
   const navigate = useNavigate();
 
   const { state } = useLocation();
-  const { wasFetched } = state || {};
+  const { wasFetched, resp_data } = state || {};
 
 
   useEffect(() => {
-    if (wasFetched) {
-      fetch('/predictor').then((response) => {
-        if (response.status !== 200) {
-          navigate("/apology");
-          setMovies([]);
-          return {}
-        }
-        if (response.status === 200) {
-          return response.json();
-        }
-      }).then((data)=>{
-        setOrg_title(Object.values(data[0])[1][0]["title"]);
-        setOrg_imdb(Object.values(data)[0]["imdbId"])
+    if (wasFetched && resp_data) {
+      console.log(resp_data);
+        setOrg_title(Object.values(resp_data[0])[1][0]["title"]);
+        setOrg_imdb(Object.values(resp_data)[0]["imdbId"])
         
-        setOrg_poster(Object.values(data[0])[1][0]["poster_path"])
+        setOrg_poster(Object.values(resp_data[0])[1][0]["poster_path"])
         
-        const imdb_result_array = Object.values(data).slice(1, 16);
-        // console.log(imdb_result_array);
+        const imdb_result_array = Object.values(resp_data).slice(1, 16);
+
         
         
         // Get movie titles from IMDb
@@ -51,7 +42,7 @@ const Predict = () => {
         }
         const movies_results = imdb_result_array.map(get_movie_results)
         setMovies(movies_results);
-        // console.log(movies)
+        console.log(movies)
         
         
         // Get IMDb Ids for the recommended movies
@@ -60,10 +51,10 @@ const Predict = () => {
         function get_movie_imdbs (movie_obj) {
           return movie_obj["imdbId"]
         }
-        // console.log(movie_imdbs)
+        console.log(movie_imdbs)
         setImdb_ids(movie_imdbs);
         
-        setOverview(Object.values(data[0])[1][0]["overview"])
+        setOverview(Object.values(resp_data[0])[1][0]["overview"])
 
         function get_recs_images (movie_obj) {
           return movie_obj["movie_results"][0]["poster_path"]
@@ -71,7 +62,7 @@ const Predict = () => {
         const recs_images = imdb_result_array.map(get_recs_images)
         setRecs_posters(recs_images)
 
-        // console.log(Object.values(data[0])[1][0]["release_date"]);
+        console.log(Object.values(resp_data[0])[1][0]["release_date"]);
 
         // Date conversion from YYYY-MM-DD to DD-MM-YYYY
         function convertDate(dateString){
@@ -79,8 +70,8 @@ const Predict = () => {
           return [p[2],p[1],p[0] ].join("-")
           }
            
-          setOrg_release(convertDate(Object.values(data[0])[1][0]["release_date"]))
-      })
+          setOrg_release(convertDate(Object.values(resp_data[0])[1][0]["release_date"]))
+    
     } 
     
     else {
@@ -88,9 +79,9 @@ const Predict = () => {
     }
     
     
-  }, [wasFetched, navigate]);
+  }, [wasFetched, navigate, resp_data]);
   
-
+  console.log(resp_data)
   // const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
   // const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
   
