@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 import {Navbar} from './components'
-import {Movies} from './components'
+import {OrgMovie} from './components'
 import './predict.css'
 
 const Predict = () => {
@@ -87,9 +87,9 @@ const Predict = () => {
         <Navbar />
         <h1>Users who liked {org_title} also liked:</h1>
         {/* <h2>{org_poster}</h2> */}
-        <a href={`https://www.imdb.com/title/tt${org_imdb}/`}><img src={`https://image.tmdb.org/t/p/w300${org_poster}`} alt="org_poster"/></a>
+        
         <br />
-        <Movies synopsis={overview} />
+        <OrgMovie synopsis={overview} org_poster_path={org_poster} org_imdbId = {org_imdb} />
         <a href= {`https://www.imdb.com/title/tt${imdb_ids[0]}/`}><p>{movies[0]}</p></a>
         <a href= {`https://www.imdb.com/title/tt${imdb_ids[1]}/`}><p>{movies[1]}</p></a>
         <a href= {`https://www.imdb.com/title/tt${imdb_ids[2]}/`}><p>{movies[2]}</p></a>
