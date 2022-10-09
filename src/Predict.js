@@ -80,12 +80,6 @@ const Predict = () => {
           }
            
           setOrg_release(convertDate(Object.values(data[0])[1][0]["release_date"]))
-
-
-
-
-
-
       })
     } 
     
@@ -112,7 +106,6 @@ const Predict = () => {
         </div>
         <div className='recs'>
 
-
           <Movie movid={imdb_ids[0]} title={movies[0]} poster={recs_posters[0]} />
           <Movie movid={imdb_ids[1]} title={movies[1]} poster={recs_posters[1]} />
           <Movie movid={imdb_ids[2]} title={movies[2]} poster={recs_posters[2]} />
@@ -128,6 +121,7 @@ const Predict = () => {
           <Movie movid={imdb_ids[12]} title={movies[12]} poster={recs_posters[12]} />
           <Movie movid={imdb_ids[13]} title={movies[13]} poster={recs_posters[13]} />
           <Movie movid={imdb_ids[14]} title={movies[14]} poster={recs_posters[14]} />
+
         </div>
         {/* <a href= {`https://www.imdb.com/title/tt${imdb_ids[0]}/`}><p>{movies[0]}</p></a>
         <a href= {`https://www.imdb.com/title/tt${imdb_ids[1]}/`}><p>{movies[1]}</p></a>
