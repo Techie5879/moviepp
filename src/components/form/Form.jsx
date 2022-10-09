@@ -79,27 +79,22 @@ const Form = () => {
   return (
     
     <div className='form_container'>
-      
-        <form className='form' onSubmit={handleSubmit}>
+        <div className='test'>
+          <form className='form' onSubmit={handleSubmit}>
+              
+            <input type='text' placeholder='Movie Name' id="movie" autoFocus
+            autoComplete='off' value={title} onChange={(e)=>{ setTitle(e.target.value); onChangeHandler(e.target.value) }}/>
           
-            
-          <input type='text' placeholder='Movie Name' id="movie" autoFocus
-          autoComplete='off' value={title} onChange={(e)=>{ setTitle(e.target.value); onChangeHandler(e.target.value) }}/>
-        
+            {!isPending && <button className='button'>Recommend!</button>}
+            {isPending && <button className='button' disabled>Recommending...</button>}
+          </form>
           
-        
-          {!isPending && <button className='button'>Recommend!</button>}
-          {isPending && <button className='button' disabled >Recommending...</button>}
-        </form>
-
-        
-        <div className="suggestions">
-          {suggestions && suggestions.map((suggestion, i) => 
-            <p key={i} onClick={() => onSuggestHandler(suggestion)}>{suggestion}</p>
-          )}
-        </div>  
-      
-        
+          <div className="suggestions">
+            {suggestions && suggestions.map((suggestion, i) => 
+              <p key={i} onClick={() => onSuggestHandler(suggestion)}>{suggestion}</p>
+            )}
+          </div>  
+        </div>
     </div>
 
   )
