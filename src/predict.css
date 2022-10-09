@@ -14,11 +14,15 @@ h2 {
 
 .recs {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     flex-wrap: wrap;
     padding: 0 2rem;
+    /* border: 2px solid hotpink; */
 }
 
 .recs p {

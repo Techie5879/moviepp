@@ -2,8 +2,8 @@
     display: flex;
     /* flex-wrap: wrap; */
     padding: 1rem 2rem;
-    /* width: 90%; */
-    border: 2px solid hotpink;
+    /* width: 70%; */
+    /* border: 2px solid hotpink; */
 }
 
 .original p {

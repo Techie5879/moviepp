@@ -48,7 +48,7 @@ def get_recs(liked_movie_title: str, model=model):
             similarity_table.append((similarity_score, recommended_movies))
         recs = pd.DataFrame(sorted(similarity_table), columns=["vector cosine distance", "imdbId"])
         # sort movies by ascending similarity
-        recs = recs.head(6).to_json()
+        recs = recs.head(16).to_json()
         return recs
     # Exception for if there isnt enough info about the movie
     except:

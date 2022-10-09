@@ -53,7 +53,7 @@ def predict():
     if obj == {}:
         return None
     else:
-        for i in range(6):
+        for i in range(16):
             imdbId = (list(obj.values()))[i]
             url = "https://api.themoviedb.org/3/find/tt{}?api_key=3748a98a294946f41071ee122061dc9b&language=en-US&external_source=imdb_id".format(imdbId)
             response = urllib.request.urlopen(url)
