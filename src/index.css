@@ -3,6 +3,6 @@
 :root {
   --font-family: 'Manrope', sans-serif;
   --color-bg: #040C18;
-  --gradient-text: linear-gradient(48deg, rgba(255, 39, 0, 1) 0%, rgba(94, 80, 208, 1) 100%);
+  --gradient-text: linear-gradient(48deg, rgb(218, 57, 8) 0%, rgb(102, 89, 199) 60%);
 
 }

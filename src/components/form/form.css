@@ -14,15 +14,15 @@
 
 .suggestions {
     background: #3f1709;
-    margin-top: 20px;
+    /* margin-top: 10px; */
     position: absolute;
     top: 450px;
     left: 330px;
     line-height: 38px;
     font-size: 25px;
     overflow-y: auto;
-    max-height: 280px;
-    width: 500px;
+    max-height: 250px;
+    width: 600px;
 }
 
 .suggestions::-webkit-scrollbar-track

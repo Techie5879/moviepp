@@ -104,12 +104,15 @@ const Predict = () => {
     <div>
         <Navbar />
         
-        {/* <h2>{org_poster}</h2> */}
         
-        <br />
+        
         <OrgMovie synopsis={overview} org_poster_path={org_poster} org_imdbId = {org_imdb} release_date={org_release} org_title={org_title}/>
-        <h1>Users who liked {org_title} also liked:</h1>
+        <div className='heading'>
+          <h1>Users who liked {org_title} also liked:</h1>
+        </div>
         <div className='recs'>
+
+
           <Movie movid={imdb_ids[0]} title={movies[0]} poster={recs_posters[0]} />
           <Movie movid={imdb_ids[1]} title={movies[1]} poster={recs_posters[1]} />
           <Movie movid={imdb_ids[2]} title={movies[2]} poster={recs_posters[2]} />

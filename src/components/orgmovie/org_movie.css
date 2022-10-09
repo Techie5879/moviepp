@@ -1,21 +1,102 @@
 .original {
     display: flex;
+    flex-direction: row;
     /* flex-wrap: wrap; */
-    padding: 1rem 2rem;
-    /* width: 70%; */
+    /* width: 90%; */
+    padding: 1rem 1rem 1rem 5rem;
     /* border: 2px solid hotpink; */
 }
 
-.original p {
+.synopsis p {
     color: #fff;
     font-family: var(--font-family);
-    padding: 2rem;
-    width: 90%;
+    padding: 1rem 2rem;
+    /* width: 95%; */ 
+    /* border: 2px solid palevioletred; */
 }
+.original_details {
+    /* border: 2px solid greenyellow; */
+    width: 70%;
+    margin-left: 2rem;
 
-.original_details h2 {
+}
+.original_details h1 {
     color: #fff;
     font-family: var(--font-family);
     padding-left: 2rem;
     text-align: left;
 }
+
+
+h2 {
+    color: #fff;
+    
+    font-family: var(--font-family);
+    padding: 1rem 2rem 0 2rem;
+    /* border: 2px solid yellow; */
+
+}
+
+
+.synopsis p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+@media screen and (max-width:840px) {
+    .original {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* flex-wrap: wrap; */
+        /* width: 90%; */
+        /* padding: 1rem 1rem 1rem 5rem; */
+        padding: 1rem;
+        /* border: 2px solid hotpink; */
+    }
+    .original_details {
+        margin-top: 1rem;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .synopsis p, h2{
+        padding: 0.2rem 1rem;
+
+    }
+    .original_details h1 {
+        padding: 1rem;
+    }
+
+}
+
+
+@media screen and (max-width:540px) {
+
+    .rel_date {
+        padding: 0.5rem 0.6rem 0.5rem 1rem;
+        color: #fff;
+        font-family: var(--font-family);
+        /* border: 2px solid yellow; */
+    }
+
+    .synopsis p {
+        padding: 0.5rem;
+    }
+    .synopsis h2 {
+        padding: 0.5rem;
+    }
+    .original_details h1 {
+        padding: 0.5rem;
+        
+    }
+    .original_details {
+        margin-top: 0.5rem;
+    }
+}
+
+
