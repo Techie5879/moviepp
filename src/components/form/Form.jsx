@@ -77,7 +77,7 @@ const Form = () => {
         <form className='form' onSubmit={handleSubmit}>
           
             
-          <input type='text' placeholder='Movie Name' id="movie"
+          <input type='text' placeholder='Movie Name' id="movie" autoFocus
           autoComplete='off' value={title} onChange={(e)=>{ setTitle(e.target.value); onChangeHandler(e.target.value) }}/>
         
           
