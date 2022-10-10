@@ -5,7 +5,7 @@ So I present my (first!) project, MOVIE++, a movie recommender system using Sing
 It takes a movie name as user input through the form, and spits out 15 recommended movies based on my Machine Learning model.
 
 ## Technologies Used:
----
+
 ### Frontend:
 - ReactJS
 - CSS
