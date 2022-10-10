@@ -66,6 +66,9 @@ Then, SciPy vector cosine distance was used to compute similarity of items (movi
 
 The similarity is calculated over all the movies available in the database, and the 15 most similar movies are returned by the Flask API, along with information from the TMDB (The Movie Database) API which has been used to get the poster paths and IMDb IDs of the movies. These are received by the React Frontend and then rendered in the web browser.
 
+### Here's a diagram describing the Data Flow:
+![Data flow](/images/flow_data.png?raw=true "Flow of Data")
+
 ## Demo Video
 
 (Coming soon!)
