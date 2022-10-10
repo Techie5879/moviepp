@@ -6,7 +6,7 @@ svd_model.h5
 svd_model_200.h5
 __pycache__
 movie_link_getter.ipynb
-
+.env
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 

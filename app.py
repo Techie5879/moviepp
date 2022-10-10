@@ -1,8 +1,13 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, request
 from predict import get_recs
 import urllib.request
 
 import json
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 
 app = Flask(__name__)
 
@@ -47,7 +52,7 @@ def predict():
             # If movie title isnt in csv list
                 for i in range(16):
                     imdbId = (list(obj.values()))[i]
-                    url = "https://api.themoviedb.org/3/find/tt{}?api_key=3748a98a294946f41071ee122061dc9b&language=en-US&external_source=imdb_id".format(imdbId)
+                    url = "https://api.themoviedb.org/3/find/tt{}?api_key={}&language=en-US&external_source=imdb_id".format(imdbId, API_KEY)
                     response = urllib.request.urlopen(url)
                     data = response.read()
                     intermediate = json.loads(data)
@@ -60,6 +65,3 @@ def predict():
                 
                 return None
 
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
