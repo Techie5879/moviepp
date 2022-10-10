@@ -1,5 +1,5 @@
 from scipy.spatial.distance import cosine as cosine_distance
-import pickle, gzip, pickletools
+import pickle, gzip
 import numpy as np
 import pandas as pd
 
