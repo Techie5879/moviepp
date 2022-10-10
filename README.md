@@ -17,6 +17,7 @@ It takes a movie name as user input through the form, and spits out 15 recommend
 
 ### Model Training:
 - Surprise (Python Library)
+- Scipy (Python Library)
 
 ---
 
@@ -28,6 +29,29 @@ It takes a movie name as user input through the form, and spits out 15 recommend
 ![suggestions](/images/suggestions.png?raw=true "Home Page_Suggestions")
 
 ### Predictions page for The Dark Knight (2008):
-![predictions_TDK1](/images/pred_TDK1.png?raw=true "TDK1")
+---
+![predictions for The Dark Knight (2008)](/images/pred_TDK.png?raw=true "TDK")
 
-![predictions_TDK2](/images/pred_TDK2.png?raw=true "TDK2")
+
+### Predictions page for Good Will Hunting (1997):
+---
+![predictions for Good Will Hunting (1997)](/images/pred_gwh.png?raw=true "GWH")
+
+### How It Works Page:
+---
+![how it works page](/images/how.png?raw=true "How It Works")
+
+### About Page:
+---
+![about page](/images/about.png?raw=true "about")
+
+
+## Usage:
+---
+1. User types name of movie, selects a movie from the suggestions list, and clicks the Recommend! button
+2. A page with the details of the chosen movie and list of predicted movies with links to their IMDb Pages is displayed. 
+3. A user can click on the Poster of any movie to be taken to it's respective IMDb Page
+
+## How It Works: 
+---
+The SVD model was first trained using the Surprise Library in Python. The matrix factorization method of Singular Value Decomposition is a Dimensionality Reduction method which breaks down the user-product preference matrix into a user-feature and item-feature matrix. This reduces the dimension of the user-product preference space.
