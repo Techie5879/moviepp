@@ -17,7 +17,7 @@ It takes a movie name as user input through the form, and spits out 15 recommend
 
 ### Model Training:
 - Surprise (Python Library)
-- Scipy (Python Library)
+- SciPy (Python Library)
 
 ---
 
@@ -47,11 +47,18 @@ It takes a movie name as user input through the form, and spits out 15 recommend
 
 
 ## Usage:
----
+
 1. User types name of movie, selects a movie from the suggestions list, and clicks the Recommend! button
 2. A page with the details of the chosen movie and list of predicted movies with links to their IMDb Pages is displayed. 
 3. A user can click on the Poster of any movie to be taken to it's respective IMDb Page
 
 ## How It Works: 
----
-The SVD model was first trained using the Surprise Library in Python. The matrix factorization method of Singular Value Decomposition is a Dimensionality Reduction method which breaks down the user-product preference matrix into a user-feature and item-feature matrix. This reduces the dimension of the user-product preference space.
+
+The SVD model was first trained using the Surprise Library in Python. The training was done using the MovieLens 25M dataset provided by GroupLens (permalink: [MovieLens 25M dataset](https://grouplens.org/datasets/movielens/25m/))
+It contains approximately 25M ratings across 62423 movies.
+
+The Matrix Factorization method of Singular Value Decomposition is a Dimensionality Reduction method which breaks down the user-product preference matrix into a user-feature and item-feature matrix. This reduces the dimension of the user-product preference space.
+
+Then, SciPy vector cosine distance was used to compute similarity of items (movies) by taking the dot product of the latent feature vectors corresponding to each movie. 
+
+The similarity is calculated over all the movies available in the database, and the 15 most similar movies are returned by the Flask API, along with information from the TMDB (The Movie Database) API which has been used to get the poster paths and IMDb IDs of the movies. These are received by the React Frontend and then rendered in the web browser.
