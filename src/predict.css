@@ -6,25 +6,15 @@
     -webkit-text-fill-color: transparent;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    /* margin-left: 3rem; */
     padding-left: 4rem;
     text-align: left;
-    /* border: 2px solid hotpink; */
 }
 
 
 .recs {
-    /* display: flex; */
-    /* flex-direction: row;
-    justify-content: space-around;
-    align-items: center; */
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
     padding: 0.5rem 1rem;
-    /* border: 2px solid hotpink; */
-    /* background: #fff; */
     margin-bottom: 20px;
 }
 

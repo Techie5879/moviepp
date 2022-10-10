@@ -26,7 +26,6 @@ const Predict = () => {
 
   useEffect(() => {
     if (wasFetched && resp_data) {
-      // console.log(resp_data);
       setOrg_title(Object.values(resp_data[0])[1][0]["title"]);
       setOrg_imdb(Object.values(resp_data)[0]["imdbId"])
       
@@ -42,8 +41,6 @@ const Predict = () => {
       }
       const movies_results = imdb_result_array.map(get_movie_results)
       setMovies(movies_results);
-      // console.log(movies)
-      
       
       // Get IMDb Ids for the recommended movies
       const movie_imdbs = imdb_result_array.map(get_movie_imdbs)
@@ -51,7 +48,6 @@ const Predict = () => {
       function get_movie_imdbs (movie_obj) {
         return movie_obj["imdbId"]
       }
-      // console.log(movie_imdbs)
       setImdb_ids(movie_imdbs);
       
       setOverview(Object.values(resp_data[0])[1][0]["overview"])
@@ -62,7 +58,6 @@ const Predict = () => {
       const recs_images = imdb_result_array.map(get_recs_images)
       setRecs_posters(recs_images)
 
-      // console.log(Object.values(resp_data[0])[1][0]["release_date"]);
 
       // Date conversion from YYYY-MM-DD to DD-MM-YYYY
       function convertDate(dateString){
@@ -82,8 +77,6 @@ const Predict = () => {
   }, [wasFetched, navigate, resp_data]);
   
   
-  // const movie_name = movies.map((movie) => <p key={movie.toString()}>{movie}<br/><br/></p>);
-  // const overview_each = overview.map((movie_overview) => <p key={movie_overview.toString()}>{movie_overview}<br /><br/></p>);
   
   return (
     <div>
