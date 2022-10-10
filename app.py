@@ -15,9 +15,6 @@ obj = {}
 
 imdb_result = {}
 
-@app.route('/')
-def index():
-    return "Hello World"
 
 @app.route('/movies')
 def movies():
