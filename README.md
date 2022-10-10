@@ -35,7 +35,7 @@ It takes a movie name as user input through the form, and spits out 15 recommend
 
 ### Predictions page for Good Will Hunting (1997):
 ---
-![predictions for Good Will Hunting (1997)](/images/pred_gwh.png?raw=true "GWH")
+![predictions for Good Will Hunting (1997)](/images/pred_GWH.png?raw=true "GWH")
 
 ### How It Works Page:
 ---
