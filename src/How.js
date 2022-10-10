@@ -5,7 +5,6 @@ const How = () => {
   return (
     <div className='nav_how_container'>
       <Navbar />
-      
         <div className='how_container'>
           <div className='how'>
             <h2>How It Works</h2>
@@ -17,6 +16,7 @@ const How = () => {
               The Predictions are returned as a respose to a POST request from the form in Home. They are then rendered, and each poster can be clicked to go to its respective IMDb Page to get more details.
             </p>
           </div>
+          
         </div>
     </div>
   )

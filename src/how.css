@@ -23,22 +23,77 @@
     flex-direction: column;
     width: 60%;
     height: 500px;
-
     padding: 2rem;
-    background: var(--color-footer);
-
     background:radial-gradient(circle at 0% 0%, rgba(54, 24, 2, 1) 0%, rgb(10, 4, 4) 100%);
-
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+    /* filter: drop-shadow(4px 4px 20px rgba(98, 5, 5, 0.338)); */
     border-radius: 10px;
 }
 .how p {
     color: #fff;
     font-family: var(--font-family);
-    padding: 2rem 2rem 0 2rem;
+    padding: 1rem 2rem 0 2rem;
     font-size: 18px;
     line-height: 30px;
     text-align: justify;
     text-justify: inter-word;
 }
 
+.how h2 {
+    color: #fff;
+    font-size: 35px;
+    font-family: var(--font-family);
+    padding: 1rem 2rem 1rem 2rem;
+    /* border: 2px solid yellow; */
+}
+
+
+@media screen and (max-width: 1000px) {
+    .how {
+        padding: 2rem 1rem 1rem 1rem;
+        width: 75%;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .how {
+        padding: 1rem;
+        width: 85%;
+    }
+    .how p {
+        font-size: 16px;
+    }   
+}
+
+@media screen and (max-width: 550px) {
+
+    .how {
+        padding: 0.5rem 1rem 0 0.5rem;
+        height: 430px;
+    }
+    .how p {
+        font-size: 14px;
+        line-height: 25px;   
+    }   
+}
+
+@media screen and (max-width: 495px) {
+    .how {
+        padding: 0.5rem;
+    }
+
+    .how h2 {
+        padding-bottom: 0rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .how {
+        padding: 0.1rem;
+    }
+    .how p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+}
