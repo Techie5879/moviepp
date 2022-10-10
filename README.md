@@ -69,10 +69,6 @@ The similarity is calculated over all the movies available in the database, and 
 ### Here's a diagram describing the Data Flow:
 ![Data flow](/images/flow_data.png?raw=true "Flow of Data")
 
-## Demo Video
-
-(Coming soon!)
-
 ## Instructions on How to Run on localhost:
 (Coming soon!)
 
