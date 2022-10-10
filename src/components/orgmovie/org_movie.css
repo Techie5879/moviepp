@@ -50,16 +50,9 @@ h2 {
 .synopsis p {
     font-size: 18px;
     line-height: 28px;
+    text-align: justify;
+    text-justify: inter-word;
 }
-
-
-
-
-
-
-
-
-
 
 
 

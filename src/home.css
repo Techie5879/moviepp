@@ -1,0 +1,8 @@
+.nav_form_container {
+    flex: 1;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid hotpink; */
+}
