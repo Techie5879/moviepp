@@ -2,7 +2,7 @@ from scipy.spatial.distance import cosine as cosine_distance
 import pickle, gzip, pickletools
 import numpy as np
 import pandas as pd
-import json
+
 
 
 movies = pd.read_csv("movies.csv")

@@ -43,31 +43,21 @@
 @media screen and (max-width:1200px) {
     .recs {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-}
-@media screen and (max-width:980px) {
-    .recs {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
     
 }
+
 @media screen and (max-width:740px) {
-    .recs {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-}
-@media screen and (max-width:540px) {
     .recs {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         margin-bottom: 0;
-
     }
+    
+}
+@media screen and (max-width:540px) {
+    
     .heading h1 {
         padding: 1rem 1rem 1rem 1.2rem;
         margin-bottom: 1rem;

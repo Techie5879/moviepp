@@ -114,16 +114,7 @@ const Predict = () => {
           <Movie movid={imdb_ids[14]} title={movies[14]} poster={recs_posters[14]} />
 
         </div>
-        {/* <a href= {`https://www.imdb.com/title/tt${imdb_ids[0]}/`}><p>{movies[0]}</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[1]}/`}><p>{movies[1]}</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[2]}/`}><p>{movies[2]}</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[3]}/`}><p>{movies[3]}</p></a>
-        <a href= {`https://www.imdb.com/title/tt${imdb_ids[4]}/`}><p>{movies[4]}</p></a>
-        <img src={`https://image.tmdb.org/t/p/w200${recs_posters[0]}`} alt="rec1" />
-        <img src={`https://image.tmdb.org/t/p/w200${recs_posters[1]}`} alt="rec2" />
-        <img src={`https://image.tmdb.org/t/p/w200${recs_posters[2]}`} alt="rec3" />
-        <img src={`https://image.tmdb.org/t/p/w200${recs_posters[3]}`} alt="rec4" />
-        <img src={`https://image.tmdb.org/t/p/w200${recs_posters[4]}`} alt="rec5" /> */}
+
     </div>
   )
 }
