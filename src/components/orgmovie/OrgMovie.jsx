@@ -12,9 +12,13 @@ const OrgMovie = ({synopsis, org_poster_path, org_imdbId, release_date, org_titl
           <p>{synopsis}</p>
         </div>
         <p className='rel_date'>Release Date: {release_date}</p>
+        <div className='view_more'>
+          <a href={`https://www.imdb.com/title/tt${org_imdbId}/`} target="_blank" rel='noreferrer'><p>View more on IMDb</p></a>
+        </div>
       </div>
-        
     </div>
+        
+
   )
 }
 
