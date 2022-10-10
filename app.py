@@ -36,20 +36,17 @@ def predict():
         
         movie = request.get_json()
         movie_title = movie["title"]
-        # print(movie_title)
         # If movie title isnt empty
         if movie_title:
             predictions = get_recs(movie_title)
-            # print(predictions)
             # If movie title in csv list
             if predictions:
                 
                 final = json.loads(predictions)
                 rec_titles = final["imdbId"]
-                # print(rec_titles)
                 obj.update(rec_titles)
-                # print(obj)
-            # If movie title isnt in csv list
+
+                # If movie title isnt in csv list
                 for i in range(16):
                     imdbId = (list(obj.values()))[i]
                     url = "https://api.themoviedb.org/3/find/tt{}?api_key={}&language=en-US&external_source=imdb_id".format(imdbId, API_KEY)
