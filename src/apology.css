@@ -1,7 +1,18 @@
-.image {
+.nav_apology_container {
+    flex: 1 1;
+    height: 100vh;
+    width: 100%;
     display: flex;
-    
+    flex-direction: column;
+    /* border: 2px solid hotpink;  */
+}
+
+.apology {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid hotpink;
+    flex: 1 1;
+    position: relative;
+    /* border: 2px solid blue; */
 }

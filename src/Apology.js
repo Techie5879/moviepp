@@ -4,9 +4,9 @@ import './apology.css'
 
 const Apology = () => {
   return (
-    <div>
+    <div className='nav_apology_container'>
         <Navbar />
-        <div className='image'>
+        <div className='apology'>
             <img src="https://api.memegen.link/images/custom/_/not_enough_info_about_movie.jpg?alt=https://i.imgur.com/CsCgN7Ll.png&width=400" alt='apology'/>
         </div>
     </div>
