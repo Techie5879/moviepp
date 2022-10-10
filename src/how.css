@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     width: 60%;
-    height: 500px;
+    height: 480px;
     padding: 2rem;
     background:radial-gradient(circle at 0% 0%, rgba(54, 24, 2, 1) 0%, rgb(10, 4, 4) 100%);
     /* filter: drop-shadow(4px 4px 20px rgba(98, 5, 5, 0.338)); */
@@ -31,7 +31,7 @@
 .how p {
     color: #fff;
     font-family: var(--font-family);
-    padding: 1rem 2rem 0 2rem;
+    padding: 1.5rem 2rem 0 2rem;
     font-size: 18px;
     line-height: 30px;
     text-align: justify;
@@ -40,14 +40,14 @@
 
 .how h2 {
     color: #fff;
-    font-size: 35px;
+    font-size: 38px;
     font-family: var(--font-family);
     padding: 1rem 2rem 1rem 2rem;
     /* border: 2px solid yellow; */
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
     .how {
         padding: 2rem 1rem 1rem 1rem;
         width: 75%;
@@ -58,32 +58,42 @@
 @media screen and (max-width: 800px) {
     .how {
         padding: 1rem;
-        width: 85%;
+        width: 88%;
     }
     .how p {
+        padding-top: 1rem;
         font-size: 16px;
     }   
+    .how h2 {
+        font-size: 34px;
+        padding-bottom: 0.8rem;
+    }
 }
 
 @media screen and (max-width: 550px) {
 
     .how {
-        padding: 0.5rem 1rem 0 0.5rem;
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
         height: 430px;
     }
     .how p {
         font-size: 14px;
-        line-height: 25px;   
+        line-height: 23px;   
     }   
+    .how h2 {
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 495px) {
     .how {
         padding: 0.5rem;
+        height: 390px;
     }
 
     .how h2 {
         padding-bottom: 0rem;
+        /* font-size: 28px; */
     }
 }
 
@@ -95,5 +105,13 @@
         font-size: 13px;
         line-height: 22px;
     }
+}
 
+@media screen and (max-width: 420px) {
+    .how {
+        padding: 0;
+    }
+    .how p {
+        padding: 0.5rem 2rem;
+    }
 }

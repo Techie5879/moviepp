@@ -8,7 +8,9 @@ const About = () => {
       <div className='about_container'>
         <div className='about'>
           <h2>About</h2>
-          <p>Aritra Bandyopadhyay</p>
+          <div className='name'>
+            <p>Aritra Bandyopadhyay</p>
+          </div>
           <div className='institute'>
             <p>Indian Institute of Engineering Science and Technology, Shibpur</p>
             <p>Class of 2025</p>
