@@ -8,7 +8,7 @@ It takes a movie name as user input through the form, and spits out 15 recommend
 
 ## Live Demo:
 Deployed at: [MOVIE++](https://techie5879.github.io/deploy-moviepp/#/) (Using Github Pages)  
-The deployed verion uses an SVD model item-based CF recommender system (same as the one detailed in the main code), but it has been trained on a smaller dataset to reduce model file size for deployment. It has been trained using the smaller 100K MovieLens small-latest dataset [MovieLens Small-Latest Permalink](https://grouplens.org/datasets/movielens/latest/).
+The deployed verion uses an SVD model item-based CF recommender system (same as the one detailed in the main code), but it has been trained on a smaller dataset to reduce model file size for deployment. It has been trained using the smaller 100K MovieLens small-latest dataset [MovieLens Small-Latest Permalink](https://grouplens.org/datasets/movielens/latest/). It won't provide the same recommendations as the model trained using the 25M Dataset does, but I've tuned the hyperparameters to give recommendations that seem good enough.
 
 ## Technologies Used:
 
