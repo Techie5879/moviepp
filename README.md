@@ -6,6 +6,9 @@ Getting recommendations for movies is hard. There just so much to choose from on
 So I present my (first!) project, MOVIE++, a movie recommender system using Singular Value Decomposition Matrix Factorization Algorithms and item-based Collaborative Filtering.  
 It takes a movie name as user input through the form, and spits out 15 recommended movies based on my Machine Learning model.
 
+## Live Demo:
+Deployed at: [MOVIE++](https://techie5879.github.io/deploy-moviepp/#/) (Using Github Pages)
+
 ## Technologies Used:
 
 ### Frontend:
