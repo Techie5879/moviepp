@@ -73,8 +73,10 @@ The similarity is calculated over all the movies available in the database, and 
 ### Here's a diagram describing the Data Flow:
 ![Data flow](/images/flow_data.png?raw=true "Flow of Data")
 
-## Instructions on How to Run on localhost:
-(Coming soon!)
+## For running on localhost:
+- To get this project up and running on your localhost, you need to have NodeJS installed. Also the requirements from `requirements.txt` must be installed in the environment you're working on. The movielens dataset must be downloaded too and movies.csv, links.csv and ratings.csv are to be placed in the project directory.  
+- Then `cd` into the repo directory, and use the `svd_train.ipynb` to generate the model.  
+- Then use `npm start` to start the frontend, and `flask run` to get the backend running
 
 ## Challenges Faced and Things Learned: 
 Since this was my first ML project (and first project in general), getting to this point was quite a challenge. First, I had to learn about how recommender systems worked, types of recommender systems (like Content-based, Collaborative Filtering). It was a continuous process of googling, finding something new, and trying to learn how to implement that! Then I came across the Netflix Prize ([More about Netflix Challenge here](https://en.wikipedia.org/wiki/Netflix_Prize) and [here](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)), where a modification of a certain technique called SVD which was quite a bit more efficient than other models grabbed the prize. So naturally I was drawn to learn what it is, and how to implement it. I finally settled on a SVD and item-based Collaborative Filtering model to recommend movies.
