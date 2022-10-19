@@ -85,4 +85,5 @@ Then, the next step was training the model, and there was trouble here too. Alth
 
 Next was the frontend. Even though I had some based HTML, CSS, Javascript knowledge, I wasn't didn't really have any experience. So I decided to learn ReactJS instead of just using HTML Templates with Jinja syntax. I learned how to create multi-page React Websites, conditional routing, use of hooks, states, and requesting and handling data. I also implemented an autocomplete feature in the form.
 
-Deployment of this app to a hosting service is a bit of a difficulty as of now, as the model file generated was of 300+ MB. Hosting such a large model online to get predictions along with a Flask server is quite a problem. However, I'll be trying to get a hosted model up and running which uses the MovieLens 100K dataset [100K MovieLens Permalink](https://grouplens.org/datasets/movielens/100k/). 
+Deployment of this app to a hosting service is a bit of a difficulty as of now, as the model file generated was of 300+ MB. Hosting such a large model online to get predictions along with a Flask server is quite a problem.  
+The project has been deployed by making the model smaller by training it on the movielens-small-latest dataset. 
