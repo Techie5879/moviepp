@@ -21,7 +21,7 @@ The deployed verion uses an SVD model item-based CF recommender system (same as 
 
 ### Model Training:
 - Surprise (Python Library)
-- SciPy (Python Library)
+- Scikit-learn (Python Library)
 
 ## Screenshots:
 ### Home page:
