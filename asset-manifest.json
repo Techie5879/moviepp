@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/deploy-moviepp/static/css/main.5e6d9d29.css",
-    "main.js": "/deploy-moviepp/static/js/main.1afceb8b.js",
-    "static/media/logo.svg": "/deploy-moviepp/static/media/logo.5c82ac00597e7d69fb839b93bdb69f77.svg",
-    "index.html": "/deploy-moviepp/index.html",
-    "main.5e6d9d29.css.map": "/deploy-moviepp/static/css/main.5e6d9d29.css.map",
-    "main.1afceb8b.js.map": "/deploy-moviepp/static/js/main.1afceb8b.js.map"
+    "main.css": "/moviepp/static/css/main.5e6d9d29.css",
+    "main.js": "/moviepp/static/js/main.0e931952.js",
+    "static/media/logo.svg": "/moviepp/static/media/logo.5c82ac00597e7d69fb839b93bdb69f77.svg",
+    "index.html": "/moviepp/index.html",
+    "main.5e6d9d29.css.map": "/moviepp/static/css/main.5e6d9d29.css.map",
+    "main.0e931952.js.map": "/moviepp/static/js/main.0e931952.js.map"
   },
   "entrypoints": [
     "static/css/main.5e6d9d29.css",
-    "static/js/main.1afceb8b.js"
+    "static/js/main.0e931952.js"
   ]
 }
